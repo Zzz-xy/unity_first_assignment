@@ -37,7 +37,8 @@ public class PlayerControl : MonoBehaviour
 
         if (Mathf.Abs(heroBody.velocity.x) > maxSpeed)
             heroBody.velocity = new Vector2(Mathf.Sign(heroBody.velocity.x) * maxSpeed, heroBody.velocity.y);
-        //anim.SetFloat("speed",Mathf.Abs())
+
+        anim.SetFloat("speed", Mathf.Abs(h));
 
         if (h > 0 && !faceRight)
             flip();
@@ -45,6 +46,7 @@ public class PlayerControl : MonoBehaviour
             flip();
         if (jump)
         {
+            anim.SetTrigger("jump");
             heroBody.AddForce(new Vector2(0, jumpForce));
             jump = false;
         }
