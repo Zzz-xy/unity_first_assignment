@@ -152,7 +152,7 @@ Transform:
   - {fileID: 608725518}
   - {fileID: 1784906023}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1074562
 MonoBehaviour:
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 292884988}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,12 +747,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292884987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2042356, y: 3.100656, z: -7.7447066}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.39, y: 1.78, z: -7.7447066}
+  m_LocalScale: {x: 0.73952305, y: 0.73952305, z: 0.73952305}
   m_Children:
   - {fileID: 624722312}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &341959839
 GameObject:
@@ -1040,6 +1040,7 @@ GameObject:
   - component: {fileID: 498835699}
   - component: {fileID: 498835701}
   - component: {fileID: 498835702}
+  - component: {fileID: 498835703}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -1055,7 +1056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498835696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.04, y: 1.9, z: -5.1998}
+  m_LocalPosition: {x: 0.56, y: 1.74, z: -5.1998}
   m_LocalScale: {x: 0.64177716, y: 0.64177716, z: 0}
   m_Children:
   - {fileID: 1270129162}
@@ -1172,6 +1173,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &498835703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498835696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0afa2abe0389024fad153d2aace2418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damageInterval: 0.35
+  damageAmout: 60
+  hurtForce: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,9 +1656,11 @@ GameObject:
   m_Component:
   - component: {fileID: 624722312}
   - component: {fileID: 624722313}
+  - component: {fileID: 624722315}
+  - component: {fileID: 624722314}
   m_Layer: 0
   m_Name: char_enemy_alienShip
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1654,7 +1673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624722311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.29, y: 2.79, z: 7.7447066}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8522535, y: 0.8522535, z: 0.8522535}
   m_Children: []
   m_Father: {fileID: 292884988}
@@ -1711,6 +1730,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &624722314
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624722311}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.28, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.51, y: 4.61}
+    newSize: {x: 5.51, y: 4.61}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.88, y: 4.61}
+  m_EdgeRadius: 0
+--- !u!50 &624722315
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624722311}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &723177345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,7 +3242,7 @@ GameObject:
   - component: {fileID: 1784906023}
   - component: {fileID: 1784906024}
   m_Layer: 0
-  m_Name: Health
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

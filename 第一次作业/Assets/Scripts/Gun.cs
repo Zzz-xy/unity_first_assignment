@@ -10,12 +10,12 @@ public class Gun : MonoBehaviour
     public AudioClip clip;
 
     private PlayerControl playerCtrl;
-    //private Animator anim;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         playerCtrl = transform.root.GetComponent<PlayerControl>();
-        //anim = transform.root.gameObject.GetComponent<Animator>();
+        anim = transform.root.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour
        
         if (Input.GetButtonDown("Fire1"))
         { 
-            //anim.SetTrigger("Shoot");
+            anim.SetTrigger("shoot");
             GetComponent<AudioSource>().clip = clip;
             GetComponent<AudioSource>().Play();
 
