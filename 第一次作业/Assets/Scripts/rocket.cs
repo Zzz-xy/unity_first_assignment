@@ -5,6 +5,7 @@ using UnityEngine;
 public class rocket : MonoBehaviour
 {
     public GameObject explosion;
+    private enemy enemies;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +20,16 @@ public class rocket : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnExplode();
-        Destroy(gameObject);
-    }
-    // Update is called once per frame
-    void Update()
-    {
+        enemies = collision.GetComponent<enemy>();
+        if (collision.tag != "Player")
+        {
+            OnExplode();
+            Destroy(gameObject);
+        }
+        if (collision.tag == "Enemy")
+        {
+            enemies.Hurt();
+        }
         
     }
 }

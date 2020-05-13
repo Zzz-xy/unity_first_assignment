@@ -182,12 +182,12 @@ PrefabInstance:
     - target: {fileID: 7365980842941701063, guid: 6d3375760e5b88943b07ea3dee41e470,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.1987486
+      value: 20.99
       objectReference: {fileID: 0}
     - target: {fileID: 7365980842941701063, guid: 6d3375760e5b88943b07ea3dee41e470,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.73
+      value: 5.06
       objectReference: {fileID: 0}
     - target: {fileID: 7365980842941701063, guid: 6d3375760e5b88943b07ea3dee41e470,
         type: 3}
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 184857584}
   - component: {fileID: 184857586}
   - component: {fileID: 184857585}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: env_PlatformBridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 282761147}
   - component: {fileID: 282761148}
   - component: {fileID: 282761149}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: env_PlatformUfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 373233850}
   - component: {fileID: 373233852}
   - component: {fileID: 373233851}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: env_PlatformTop_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1504,7 +1504,7 @@ GameObject:
   - component: {fileID: 576778756}
   - component: {fileID: 576778758}
   - component: {fileID: 576778757}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: env_PlatformTop_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,9 +2050,9 @@ GameObject:
   - component: {fileID: 876767011}
   - component: {fileID: 876767010}
   - component: {fileID: 876767009}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: env_TowerFull
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2285,7 +2285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 3
   spawnDelay: 3
-  enemy: {fileID: 0}
+  enemy: {fileID: 7365980842941701056, guid: 6d3375760e5b88943b07ea3dee41e470, type: 3}
 --- !u!4 &988457795
 Transform:
   m_ObjectHideFlags: 0
@@ -2556,9 +2556,9 @@ GameObject:
   - component: {fileID: 1260703230}
   - component: {fileID: 1260703229}
   - component: {fileID: 1260703228}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: env_TowerFull
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3420,7 +3420,7 @@ GameObject:
   - component: {fileID: 2041191677}
   - component: {fileID: 2041191679}
   - component: {fileID: 2041191678}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: env_PlatformBridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
