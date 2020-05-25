@@ -51,9 +51,4 @@ public class CameraFollow : MonoBehaviour
         TrackPlayer();
         Debug.Log(Time.deltaTime);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

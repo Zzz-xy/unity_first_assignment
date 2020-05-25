@@ -7,12 +7,14 @@ public class BombPickup : MonoBehaviour
 	//public AudioClip pickupClip;
 
 	private Animator anim;              
-	private bool landed = false;        
+	private bool landed = false;
+	private LayBombs layBombs;
 
 
 	void Awake()
 	{
 		anim = transform.root.GetComponent<Animator>();
+		layBombs = GameObject.FindGameObjectWithTag("Player").GetComponent<LayBombs>();
 	}
 
 
@@ -21,7 +23,7 @@ public class BombPickup : MonoBehaviour
 		if (other.tag == "Player")
 		{
 			//AudioSource.PlayClipAtPoint(pickupClip, transform.position);
-			//other.GetComponent<LayBombs>().bombCount++;
+			other.GetComponent<LayBombs>().bombCount++;
 
 			Destroy(transform.root.gameObject);
 		}

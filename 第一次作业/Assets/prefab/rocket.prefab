@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 2124675887340033447}
   - component: {fileID: 7996098522305464142}
   - component: {fileID: 6080819047941332786}
-  - component: {fileID: 1087280394087468058}
+  - component: {fileID: 652620597}
   m_Layer: 0
   m_Name: trail
   m_TagString: Untagged
@@ -5092,7 +5092,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &1087280394087468058
+--- !u!114 &652620597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5101,7 +5101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5393187472671494727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3eb644dde045f945bfbe67180b17bcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ce5b895be25d0443b47e54c7c1bb1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sortingLayerName: ForeGround
