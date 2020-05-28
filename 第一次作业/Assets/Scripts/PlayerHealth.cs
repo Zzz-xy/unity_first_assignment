@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Audio;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class PlayerHealth : MonoBehaviour
     public float damageInterval = 0.35f;
     public float damageAmout = 10f;
     public float hurtForce = 100f;
+    public AudioClip[] ouchClips;
+    public AudioMixer mixer;
 
+    private AudioSource audio;
     private SpriteRenderer healthBar;
     private float lastHurtTime;
     private Vector3 healthScale;
@@ -22,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         heroBody = GetComponent<Rigidbody2D>();
         playerControl = GetComponent<PlayerControl>();
         healthScale = healthBar.transform.localScale;
+        audio = GetComponent<AudioSource>();
     }
 
     public void UpdateHealthBar()
@@ -39,6 +44,17 @@ public class PlayerHealth : MonoBehaviour
         if (health < 0) health = 0;
 
         UpdateHealthBar();
+
+        if (audio != null)
+        {
+            if (!audio.isPlaying)
+            {
+                int i = Random.RandomRange(0, ouchClips.Length);
+                audio.clip = ouchClips[i];
+                audio.Play();
+                mixer.SetFloat("HeroMusic", 0);
+            }
+        }
     }
 
     void Death()
@@ -55,11 +71,6 @@ public class PlayerHealth : MonoBehaviour
         }
         playerControl.enabled = false;
         GetComponentInChildren<Gun>().enabled = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

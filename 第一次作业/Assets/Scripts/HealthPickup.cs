@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class HealthPickup : MonoBehaviour
 {
 	public float healthBonus;               
-	//public AudioClip collect;               
+	public AudioClip collect;
+	public AudioMixer mixer;
 
 	private PickupSpawner pickupSpawner;    
 	private Animator anim;                  
@@ -33,7 +35,8 @@ public class HealthPickup : MonoBehaviour
 	
 			pickupSpawner.StartCoroutine(pickupSpawner.DeliverPickup());
 
-			//AudioSource.PlayClipAtPoint(collect, transform.position);
+			AudioSource.PlayClipAtPoint(collect, transform.position);
+			mixer.SetFloat("ProbsMusic", 0);
 
 			Destroy(transform.root.gameObject);
 		}

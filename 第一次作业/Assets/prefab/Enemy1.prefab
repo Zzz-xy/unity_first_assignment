@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7365980842941701056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.39, y: 1.78, z: -7.7447066}
+  m_LocalPosition: {x: 6.39, y: 1.78, z: 0}
   m_LocalScale: {x: 0.58382386, y: 0.58382386, z: 0.58382386}
   m_Children:
   - {fileID: 7365980843675143091}
@@ -133,6 +133,11 @@ MonoBehaviour:
   UI_100Points: {fileID: 0}
   deathSpinMin: -100
   deathSpinMax: 100
+  deathClips:
+  - {fileID: 8300000, guid: 039514349165244c6a43be5c3070d14b, type: 3}
+  - {fileID: 8300000, guid: 85020549641fa452d9136ac2fc852efd, type: 3}
+  - {fileID: 8300000, guid: 2e20b5071623f44cf9c72acf016de4b6, type: 3}
+  mixer: {fileID: 24100000, guid: 63c1cdad69dcf7f4fbffcd3a88cd992e, type: 2}
 --- !u!1 &7365980843675143100
 GameObject:
   m_ObjectHideFlags: 0

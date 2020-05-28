@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class enemy : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class enemy : MonoBehaviour
     public GameObject UI_100Points;
     public float deathSpinMin = -100f;
     public float deathSpinMax = 100f;
+    public AudioClip[] deathClips;
+    public AudioMixer mixer;
 
     private Transform frontCheck;
     private SpriteRenderer ren;
@@ -60,6 +63,10 @@ public class enemy : MonoBehaviour
         if (HP == 0 && !bDeath)
         {
             Death();
+
+            int j = Random.Range(0, deathClips.Length);
+            AudioSource.PlayClipAtPoint(deathClips[j], transform.position);
+            mixer.SetFloat("ProbsMusic", 0);
         }
     }
 
@@ -78,5 +85,6 @@ public class enemy : MonoBehaviour
         {
             colliders[i].isTrigger = true;
         }
+
     }
 }
