@@ -130,7 +130,6 @@ MonoBehaviour:
     type: 3}
   hurtedEnemy: {fileID: -2006954745859616592, guid: bc16422a503ec43cab4ad9ddab02ff7a,
     type: 3}
-  UI_100Points: {fileID: 0}
   deathSpinMin: -100
   deathSpinMax: 100
   deathClips:
@@ -138,6 +137,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 85020549641fa452d9136ac2fc852efd, type: 3}
   - {fileID: 8300000, guid: 2e20b5071623f44cf9c72acf016de4b6, type: 3}
   mixer: {fileID: 24100000, guid: 63c1cdad69dcf7f4fbffcd3a88cd992e, type: 2}
+  hundredPointsUI: {fileID: 100006, guid: dc88d2ee7d5675a4d8fd7e6bc2bca6bd, type: 3}
 --- !u!1 &7365980843675143100
 GameObject:
   m_ObjectHideFlags: 0
