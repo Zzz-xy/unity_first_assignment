@@ -8,6 +8,8 @@ TagManager:
   - wall
   - ground
   - ExplosionFX
+  - Score
+  - ShowScore
   layers:
   - Default
   - TransparentFX

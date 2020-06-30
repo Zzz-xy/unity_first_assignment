@@ -113,7 +113,7 @@ TextureImporter:
         x: 168
         y: 0
         width: 305
-        height: 464
+        height: 467
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: enemy1-eyelid
       rect:
         serializedVersion: 2
-        x: 682
-        y: 318
+        x: 683
+        y: 324
         width: 137
-        height: 136
+        height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,7 +172,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4b52d5716fd79dd43ac545c32d1df4ab
     internalID: 0
     vertices: []
     indices: 

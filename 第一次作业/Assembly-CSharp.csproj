@@ -83,9 +83,12 @@
     <Compile Include="Assets\Scripts\UI_Test.cs" />
     <Compile Include="Assets\Scripts\UI_Test1.cs" />
     <Compile Include="Assets\Scripts\UI_Test2.cs" />
+    <Compile Include="Assets\Scripts\car.cs" />
     <Compile Include="Assets\Scripts\destroy.cs" />
     <Compile Include="Assets\Scripts\enemy.cs" />
     <Compile Include="Assets\Scripts\rocket.cs" />
+    <Compile Include="Assets\Scripts\spawnbus.cs" />
+    <Compile Include="Assets\Scripts\spawncab.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/GitHub/GitHubDesktop/unity_first_assignment/第一次作业/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class enemy : MonoBehaviour
@@ -17,18 +18,17 @@ public class enemy : MonoBehaviour
     public GameObject hundredPointsUI;
 
     private Transform frontCheck;
+    private AudioSource audio;
     private SpriteRenderer ren;
     private Rigidbody2D enemyBody;
     private bool bDeath = false;
-    private Score score;
 
     // Start is called before the first frame update
     void Start()
     {
         frontCheck = transform.Find("frontCheck");
-        ren = transform.Find("alienShip").GetComponent<SpriteRenderer>();
+        ren = transform.Find("body").GetComponent<SpriteRenderer>();
         enemyBody = GetComponent<Rigidbody2D>();
-        score = GameObject.Find("Score").GetComponent<Score>();
     }
 
     void flip()
@@ -57,27 +57,31 @@ public class enemy : MonoBehaviour
               
         }
         enemyBody.velocity = new Vector2(moveSpeed * transform.localScale.x, enemyBody.velocity.y);
-
+ 
+        if (HP == 0 && !bDeath)
+        {
+            Death();
+        }
         if (HP == 1&&hurtedEnemy!=null)
         {
             ren.sprite = hurtedEnemy;
         }
 
-        if (HP == 0 && !bDeath)
-        {
-            Death();
-        }
+       
     }
 
     void Death()
     {
+        Score scorefollow = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
+        scorefollow.addscore();
+        Text text = GameObject.FindGameObjectWithTag("ShowScore").GetComponent<Text>();
+        text.text = scorefollow.score.ToString();
+
         SpriteRenderer[] renders = GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer s in renders) s.enabled = false;
 
         ren.enabled = true;
         if (deadEnemy != null) ren.sprite = deadEnemy;
-
-        
 
         enemyBody.AddTorque(Random.Range(deathSpinMin, deathSpinMax));
 
@@ -87,15 +91,24 @@ public class enemy : MonoBehaviour
             colliders[i].isTrigger = true;
         }
 
-        int j = Random.Range(0, deathClips.Length);
-        AudioSource.PlayClipAtPoint(deathClips[j], transform.position);
-        mixer.SetFloat("ProbsMusic", 0);
-        
-        score.score += 100;
-        Vector3 scorePos;
-        scorePos = transform.position;
-        scorePos.y += 1.5f;
+        if (audio != null)
+        {
+            if (!audio.isPlaying)
+            {
+                int j = Random.RandomRange(0, deathClips.Length);
+                audio.clip = deathClips[j];
+                audio.Play();
+                mixer.SetFloat("ProbsMusic", 0);
+            }
+        }
 
-        Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
+        if (hundredPointsUI!=null)
+        {
+            Vector3 scorePos;
+            scorePos = transform.position;
+            scorePos.y += 1.5f;
+            Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
+        }
+        bDeath = true;
     }
 }

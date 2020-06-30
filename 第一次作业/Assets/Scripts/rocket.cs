@@ -5,7 +5,6 @@ using UnityEngine;
 public class rocket : MonoBehaviour
 {
     public GameObject explosion;
-    private enemy enemies;
 
     // Start is called before the first frame update
     void Start()
@@ -14,13 +13,12 @@ public class rocket : MonoBehaviour
     }
     void OnExplode()
     {
-        Quaternion randRotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
+        Quaternion randRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
         Instantiate(explosion, transform.position, randRotation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        enemies = collision.GetComponent<enemy>();
         if (collision.tag != "Player")
         {
             OnExplode();
@@ -28,7 +26,9 @@ public class rocket : MonoBehaviour
         }
         if (collision.tag == "Enemy")
         {
-            enemies.Hurt();
+            collision.gameObject.GetComponent<enemy>().Hurt();
+            OnExplode();
+            Destroy(gameObject);
         }
         
     }
