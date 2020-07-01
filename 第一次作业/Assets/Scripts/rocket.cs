@@ -19,14 +19,21 @@ public class rocket : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Player")
-        {
-            OnExplode();
-            Destroy(gameObject);
-        }
         if (collision.tag == "Enemy")
         {
             collision.gameObject.GetComponent<enemy>().Hurt();
+            OnExplode();
+            Destroy(gameObject);
+        }
+        else if (collision.tag == "bombpickup")
+        {
+            collision.gameObject.GetComponent<Bomb>().Explode();
+            Destroy(collision.transform.root.gameObject);
+            Destroy(gameObject);
+        }
+       
+        else if (collision.gameObject.tag != "Player")
+        {
             OnExplode();
             Destroy(gameObject);
         }

@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9c9e707cd53cf41936275501536116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBonus: 10
+  healthBonus: 15
   collect: {fileID: 8300000, guid: fdcf63a3454d74ea5bdd46db131f3078, type: 3}
   mixer: {fileID: 24100000, guid: 63c1cdad69dcf7f4fbffcd3a88cd992e, type: 2}
 --- !u!1 &6079824043818432742

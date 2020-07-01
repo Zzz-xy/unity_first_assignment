@@ -5,6 +5,10 @@ using UnityEngine;
 public class car : MonoBehaviour
 {
     public float moveSpeed;
+    private void Start()
+    {
+        Destroy(gameObject, 16);
+    }
     // Update is called once per frame
     void Update()
     {

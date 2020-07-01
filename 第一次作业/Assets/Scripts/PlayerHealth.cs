@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     private Vector3 healthScale;
     private PlayerControl playerControl;
     private Rigidbody2D heroBody;
+    private Animator anim;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
         playerControl = GetComponent<PlayerControl>();
         healthScale = healthBar.transform.localScale;
         audio = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
 
     public void UpdateHealthBar()
@@ -59,6 +61,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Death()
     {
+        
+
         Collider2D[] colliders = GetComponents<Collider2D>();
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -71,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
         }
         playerControl.enabled = false;
         GetComponentInChildren<Gun>().enabled = false;
+        anim.SetTrigger("die");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

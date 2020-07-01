@@ -10,6 +10,7 @@ TagManager:
   - ExplosionFX
   - Score
   - ShowScore
+  - bombpickup
   layers:
   - Default
   - TransparentFX
